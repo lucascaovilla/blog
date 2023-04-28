@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet">
 </head>
 <header>
-    <div>
-        <label>Blog</label>
-        <label>Posts</label>
-        <label>Projetos</label>
-        <label>Categorias</label>
-        <label>Criar conta</label>
+    <div id="page-header">
+        <div>Blog</div>
+        <div>Posts</div>
+        <div>Projetos</div>
+        <div>Categorias</div>
+        <div>Criar conta</div>
     </div>
 
 </header>
@@ -18,43 +18,75 @@
 <body>
 
     <main>
-        <div>
-            Lista de posts
-            <div>
-                post
-                <div>
-                    título
-                </div>
-                <div>
-                    corpo resumido
-                </div>
-                <div>
-                    dados do post
-                </div>
-            </div>
-        </div>
+        <div id="posts-list"></div>
     </main>
     
 </body>
 
 <footer>
-    <div>
-        About the author
-    </div>
-    <div>
-        contacts
-    </div>
-    <div>
-        portfolio and social media
+    <div id="page-bottom">
+        <div>
+            About the author
+        </div>
+        <div>
+            contacts
+        </div>
+        <div>
+            portfolio and social media
+        </div>
     </div>
 </footer>
 
 
-
-
-
 <script>
-    var listPosts = [{1:1},{2:2},{3:3},{4:4},{5:5}];
+    function br() {
+        document.write('<br>');
+    }
+
+    function print(text) {
+        document.write(text);
+    }
+
+   
     
+    function showPosts() {
+        for(var i = 0; i < listPosts.length; i++) {
+            
+            const divPosts = document.getElementById('posts-list');
+            
+            var postTitle = listPosts[i][0];
+            var postText = listPosts[i][1];
+            var postInfo = listPosts[i][2];
+            
+            var divPostId = 'post-' + i;
+            var divTitleId = 'post-' + i + '-title';
+            var divTextId = 'post-' + i + '-text';
+            var divInfoId = 'post-' + i + '-info';
+
+            
+            divPosts.insertAdjacentHTML('beforeend', '<div id="' + divPostId + '">');
+            var divPost = document.getElementById(divPostId);
+            
+            divPost.insertAdjacentHTML('beforeend', '<div id="' + divTitleId + '">');
+            var divTitle = document.getElementById(divTitleId);
+            divTitle.insertAdjacentHTML('beforeend', '<label>' + postTitle + '</label>');
+                
+            divPost.insertAdjacentHTML('beforeend', '<div id="' + divTextId + '">');
+            var divText = document.getElementById(divTextId);
+            divText.insertAdjacentHTML('beforeend', '<label>' + postText + '</label>');
+                
+            divPost.insertAdjacentHTML('beforeend', '<div id="' + divInfoId + '">');
+            var divInfo = document.getElementById(divInfoId);
+            divInfo.insertAdjacentHTML('beforeend', '<label>' + postInfo + '</label>');
+                
+                
+        }
+    }
+
+    var listPosts = [['post1', 'text1', 'info1'], ['post2', 'text2', 'nfo2'], ['post3', 'text3', 'info3']];
         
+    showPosts();
+
 </script>
+
+
