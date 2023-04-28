@@ -32,19 +32,19 @@ function showPosts() {
         
         
         
-        divPost.insertAdjacentHTML('beforeend', '<div id="' + divTitleId + '">');
+        divPost.insertAdjacentHTML('beforeend', '<div class="post-title" id="' + divTitleId + '">');
         var divTitle = document.getElementById(divTitleId);
         divTitle.insertAdjacentHTML('beforeend', '<label>' + postTitle + '</label>');
             
-        divPost.insertAdjacentHTML('beforeend', '<div id="' + divTextId + '">');
+        divPost.insertAdjacentHTML('beforeend', '<div class="post-text" id="' + divTextId + '">');
         var divText = document.getElementById(divTextId);
         divText.insertAdjacentHTML('beforeend', '<label>' + postText + '</label>');
             
-        divPost.insertAdjacentHTML('beforeend', '<div id="' + divInfoId + '">');
+        divPost.insertAdjacentHTML('beforeend', '<div class="post-info" id="' + divInfoId + '">');
         var divInfo = document.getElementById(divInfoId);
         divInfo.insertAdjacentHTML('beforeend', '<label>' + postInfo + '</label>');
         
-        divPost.insertAdjacentHTML('beforeend', '<div id="' + divPostLink + '">');
+        divPost.insertAdjacentHTML('beforeend', '<div class="post-link" id="' + divPostLink + '">');
         var divPostLink = document.getElementById(divPostLink);
         divPostLink.insertAdjacentHTML('beforeend', '<a href="' + postLink + '">Read More')
 
@@ -52,6 +52,16 @@ function showPosts() {
     }
 }
 
-var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3']];
-    
+var listPosts = [];
+//['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3']//
+var n = 10;
+
+for(var i = 1; i <= n; i++) {
+    var post = [];
+    post.push("title" + i);
+    post.push("text" + i);
+    post.push("info" + i);
+    post.push("link" + i);
+    listPosts.push(post);
+}   
 showPosts();
