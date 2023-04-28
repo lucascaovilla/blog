@@ -1,92 +1,51 @@
+
 <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet">
-</head>
-<header>
-    <div id="page-header">
-        <div>Blog</div>
-        <div>Posts</div>
-        <div>Projetos</div>
-        <div>Categorias</div>
-        <div>Criar conta</div>
-    </div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</header>
+    <link rel="stylesheet" href="./css/styles.css">
+    </head>
 
+    <body>
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"></a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projects</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#posts">Posts</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#create-account">Create account</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-<body>
-
-    <main>
-        <div id="posts-list"></div>
-    </main>
-    
-</body>
-
-<footer>
-    <div id="page-bottom">
-        <div>
-            About the author
-        </div>
-        <div>
-            contacts
-        </div>
-        <div>
-            portfolio and social media
-        </div>
-    </div>
-</footer>
-
-
-<script>
-    function br() {
-        document.write('<br>');
-    }
-
-    function print(text) {
-        document.write(text);
-    }
-
-   
-    
-    function showPosts() {
-        for(var i = 0; i < listPosts.length; i++) {
-            
-            const divPosts = document.getElementById('posts-list');
-            
-            var postTitle = listPosts[i][0];
-            var postText = listPosts[i][1];
-            var postInfo = listPosts[i][2];
-            
-            var divPostId = 'post-' + i;
-            var divTitleId = 'post-' + i + '-title';
-            var divTextId = 'post-' + i + '-text';
-            var divInfoId = 'post-' + i + '-info';
-
-            
-            divPosts.insertAdjacentHTML('beforeend', '<div id="' + divPostId + '">');
-            var divPost = document.getElementById(divPostId);
-            
-            divPost.insertAdjacentHTML('beforeend', '<div id="' + divTitleId + '">');
-            var divTitle = document.getElementById(divTitleId);
-            divTitle.insertAdjacentHTML('beforeend', '<label>' + postTitle + '</label>');
-                
-            divPost.insertAdjacentHTML('beforeend', '<div id="' + divTextId + '">');
-            var divText = document.getElementById(divTextId);
-            divText.insertAdjacentHTML('beforeend', '<label>' + postText + '</label>');
-                
-            divPost.insertAdjacentHTML('beforeend', '<div id="' + divInfoId + '">');
-            var divInfo = document.getElementById(divInfoId);
-            divInfo.insertAdjacentHTML('beforeend', '<label>' + postInfo + '</label>');
-                
-                
-        }
-    }
-
-    var listPosts = [['post1', 'text1', 'info1'], ['post2', 'text2', 'nfo2'], ['post3', 'text3', 'info3']];
+        <div id="posts-list"><br></div>
         
-    showPosts();
-
-</script>
-
-
+    
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Contacts, Portfolio and Social Media</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://lucasgrisac@gmail.com"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/lucascaovilla"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/lucasgcaovilla/"><i class="fab fa-fw fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script scr="./js/script.js"></script>
+    </body>
+    </html>
+    
