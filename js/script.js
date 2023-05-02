@@ -65,3 +65,17 @@ for(var i = 1; i <= n; i++) {
     listPosts.push(post);
 }   
 showPosts();
+
+function urlParam() {
+    let paramString = window.location.href.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
+    
+    var param = ""
+
+    for (let pair of queryString.entries()) {
+       param = pair[1];
+    }
+    return param
+}
+
+console.log(urlParam())
