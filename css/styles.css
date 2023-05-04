@@ -22,159 +22,6 @@ body {
   border: 10px solid #002B00;
 }
 
-/* Rectangle 4 */
-
-.rectangle-4 {
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 240px;
-  top: 75px;
-  background: #FFFFFF;
-}
-
-/* Rectangle 16 */
-
-.rectangle-16 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 310px;
-  top: 100px;
-  background: #D9D9D9;
-}
-
-/* Rectangle 9 */
-
-.rectangle-9 {
-  box-sizing: border-box;
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 960px;
-  top: 75px;
-  background: #000000;
-  border: 1px solid #000000;
-}
-
-/* Rectangle 5 */
-
-.rectangle-5 {
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 720px;
-  top: 75px;
-  background: #FFFFFF;
-}
-
-/* Rectangle 6 */
-
-.rectangle-6 {
-  box-sizing: border-box;
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 0px;
-  top: 75px;
-  background: #000000;
-  border: 1px solid #000000;
-}
-
-/* Rectangle 8 */
-
-.rectangle-8 {
-  box-sizing: border-box;
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 480px;
-  top: 75px;
-  background: #000000;
-  border: 1px solid #000000;
-}
-
-/* Rectangle 7 */
-
-.rectangle-7 {
-  box-sizing: border-box;
-  position: absolute;
-  visibility: hidden;
-  width: 240px;
-  height: 150px;
-  left: 1200px;
-  top: 75px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-}
-
-/* Rectangle 10 */
-
-.rectangle-10 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 550px;
-  top: 103px;
-  background: #D9D9D9;
-}
-
-/* Rectangle 12 */
-
-#rectangle-12 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 66px;
-  top: 98px;
-  background: #D9D9D9;
-}
-
-/* Rectangle 14 */
-
-#rectangle-14 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 795px;
-  top: 100px;
-  background: #D9D9D9;
-}
-
-/* Rectangle 13 */
-
-#rectangle-13 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 1030px;
-  top: 100px;
-  background: #D9D9D9;
-}
-
-/* Rectangle 15 */
-
-#rectangle-15 {
-  position: absolute;
-  visibility: hidden;
-  width: 100px;
-  height: 100px;
-  left: 1270px;
-  top: 100px;
-  background: #D9D9D9;
-}
-
-/* text-posts */
 button {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -183,6 +30,7 @@ button {
   outline: none;
 }
 
+/* text-posts */
 .text-posts {
   position: absolute;
   width: 120px;
@@ -400,7 +248,7 @@ button {
   }
 
   /* botom-rect */
-  .botom-rect {
+  .bottom-rect {
     box-sizing: border-box;
     position: absolute;
     width: 1440px;
@@ -409,4 +257,8 @@ button {
     top: 824px;
     background: #003B00;
     border: 10px solid #002B00;
+  }
+
+  a {
+    color:#000000;
   }
