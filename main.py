@@ -4,9 +4,11 @@ from sqlite3 import Error
 
 
 def db_create_table():
-  banco = sqlite3.connect('database.db', check_same_thread=False)
+  banco = sqlite3.connect('blog.db', check_same_thread=False)
   cursor = banco.cursor()
-  cursor.execute("CREATE TABLE registers (code text, number text)")
+  cursor.execute("CREATE TABLE posts (code text, number text)")
+  cursor.execute("CREATE TABLE projects (code text, number text)")
+  
 def db_insert(codigo, numero):
   banco = sqlite3.connect('database.db', check_same_thread=False)
   cursor = banco.cursor()
