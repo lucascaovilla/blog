@@ -111,7 +111,7 @@ function showAbout() {
 
     divAboutMe.insertAdjacentHTML('beforeend', '<div class="self-picture" id="self-picture">');
     var divSelfPicture = document.getElementById("self-picture");
-    divSelfPicture.insertAdjacentHTML('beforeend', '<img src="Imagem0082.jpg">');
+    divSelfPicture.insertAdjacentHTML('beforeend', '<img src="static/Imagem0082.jpg">');
 
     divAboutMe.insertAdjacentHTML('beforeend', '<div class="self-info" id="self-info">');
     var divSelfInfo = document.getElementById("self-info");
@@ -245,3 +245,13 @@ function renderParam(param) {
 }
 
 renderParam(urlParam());
+
+
+
+// $.ajax({
+//     type: "POST",
+//     url: "~/pythoncode.py",
+//     data: { param: text}
+//   }).done(function( o ) {
+//      // do something
+//   });

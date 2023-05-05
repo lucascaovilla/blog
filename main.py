@@ -1,34 +1,15 @@
-import sqlite3
-from sqlite3 import Error
+from db_man import db_create_tables, db_insert_post, db_insert_project, db_select_all, db_delete
 
 
+from flask import Flask, render_template, request, redirect
 
-def db_create_table():
-  banco = sqlite3.connect('blog.db', check_same_thread=False)
-  cursor = banco.cursor()
-  cursor.execute("CREATE TABLE posts (code text, number text)")
-  cursor.execute("CREATE TABLE projects (code text, number text)")
+
+app = Flask("blog")
+@app.route('/')
+def home():
+  return render_template('index.html')
+
+    
+
   
-def db_insert(codigo, numero):
-  banco = sqlite3.connect('database.db', check_same_thread=False)
-  cursor = banco.cursor()
-  cursor.execute("INSERT INTO registers VALUES ('"+codigo+"', '"+numero+"')")
-  banco.commit()
-def db_select_all():
-  banco = sqlite3.connect('database.db', check_same_thread=False)
-  cursor = banco.cursor()
-  cursor.execute("SELECT * FROM registers")
-  #print(cursor.fetchall())
-  return list(cursor.fetchall())
-def db_delete(code):
-  banco = sqlite3.connect('database.db', check_same_thread=False)
-  cursor = banco.cursor()
-  try:
-      cursor.execute("DELETE from registers WHERE code = '"+code+"'")
-      banco.commit()
-      banco.close()
-      print("Os dados foram removidos com sucesso")
-  except sqlite3.Error as error:
-      print("Erro ao excluir:", error)
-
-db_create_table()
+app.run(host='0.0.0.0')
