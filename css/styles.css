@@ -22,6 +22,7 @@ body {
   border: 10px solid #002B00;
 }
 
+/* button */
 button {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -199,66 +200,126 @@ button {
   top: 116px;
   }
   
-  /* project-1 */
-  .project-1 {
+/* project-1 */
+.project-1 {
+box-sizing: border-box;
+position: absolute;
+width: 690px;
+height: 300px;
+left: 20px;
+top: 320px;
+background: #2B4D11;
+border: 10px solid #083C00;
+}
+
+/* project-2 */
+.project-2 {
+box-sizing: border-box;
+position: absolute;
+width: 690px;
+height: 300px;
+left: 730px;
+top: 320px;
+background: #2B4D11;
+border: 10px solid #083C00;
+}
+
+/* project-3 */
+.project-3 {
+box-sizing: border-box;
+position: absolute;
+width: 690px;
+height: 300px;
+left: 20px;
+top: 640px;
+background: #2B4D11;
+border: 10px solid #083C00;
+}
+
+/* project-4 */
+.project-4 {
+box-sizing: border-box;
+position: absolute;
+width: 690px;
+height: 300px;
+left: 730px;
+top: 640px;
+background: #2B4D11;
+border: 10px solid #083C00;
+}
+
+/* botom-rect */
+.bottom-rect {
   box-sizing: border-box;
   position: absolute;
-  width: 690px;
-  height: 300px;
+  width: 1440px;
+  height: 200px;
+  left: 0px;
+  top: 824px;
+  background: #003B00;
+  border: 10px solid #002B00;
+}
+
+a {
+  color:#000000;
+}
+
+/* post-1 */
+.post-1 {
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 1400px;
+  height: 100px;
   left: 20px;
   top: 320px;
+  
   background: #2B4D11;
   border: 10px solid #083C00;
-  }
-  
-  /* project-3 */
-  .project-3 {
+}
+
+
+/* post-2 */
+.post-2 {
   box-sizing: border-box;
+  
   position: absolute;
-  width: 690px;
-  height: 300px;
+  width: 1400px;
+  height: 100px;
   left: 20px;
-  top: 640px;
-  background: #2B4D11;
-  border: 10px solid #083C00;
-  }
+  top: 440px;
   
-  /* project-2 */
-  .project-2 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 730px;
-  top: 320px;
   background: #2B4D11;
   border: 10px solid #083C00;
-  }
+}
+
+
+/* post-3 */
+.post-3 {
+  box-sizing: border-box;
   
-  /* project-4 */
-  .project-4 {
-  box-sizing: border-box;
   position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 730px;
-  top: 640px;
+  width: 1400px;
+  height: 100px;
+  left: 20px;
+  top: 560px;
+  
   background: #2B4D11;
   border: 10px solid #083C00;
-  }
+}
 
-  /* botom-rect */
-  .bottom-rect {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1440px;
-    height: 200px;
-    left: 0px;
-    top: 824px;
-    background: #003B00;
-    border: 10px solid #002B00;
-  }
 
-  a {
-    color:#000000;
-  }
+
+/* post-4 */
+.post-4 {
+  box-sizing: border-box;
+  
+  position: absolute;
+  width: 1400px;
+  height: 100px;
+  left: 20px;
+  top: 680px;
+  
+  background: #2B4D11;
+  border: 10px solid #083C00;
+}

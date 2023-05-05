@@ -27,7 +27,7 @@ function showPosts() {
         var divInfoId = 'post-' + index + '-info';
     
         
-        mainDiv.insertAdjacentHTML('beforeend', '<div class="post" id="' + divPostId + '">');
+        mainDiv.insertAdjacentHTML('beforeend', '<div class="post-' + index + '" id="' + divPostId + '">');
         var divPost = document.getElementById(divPostId);
         
         
@@ -69,7 +69,7 @@ function showProjects() {
         var divDescriptionId = 'project-' + index + '-Description';
     
         
-        mainDiv.insertAdjacentHTML('beforeend', '<div class="project" id="' + divProjectId + '">');
+        mainDiv.insertAdjacentHTML('beforeend', '<div class="project-' + index + '" id="' + divProjectId + '">');
         var divProject = document.getElementById(divProjectId);
         
         
@@ -219,8 +219,8 @@ function showContacts() {
 
 
 
-var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3']];
-var listProjects = [['project1', 'description1', 'link1'], ['project2', 'description2', 'link2'], ['project3', 'description3', 'link3']];
+var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post4', 'text4', 'info4', 'link4']];
+var listProjects = [['project1', 'description1', 'link1'], ['project2', 'description2', 'link2'], ['project3', 'description3', 'link3'], ['project4', 'description4', 'link4']];
 var listAbout = ["about me", "my interests", "my techs"];
 
 function urlParam() {
