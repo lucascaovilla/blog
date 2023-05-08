@@ -219,9 +219,6 @@ function showContacts() {
 
 
 
-var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post4', 'text4', 'info4', 'link4']];
-var listProjects = [['project1', 'description1', 'link1'], ['project2', 'description2', 'link2'], ['project3', 'description3', 'link3'], ['project4', 'description4', 'link4']];
-var listAbout = ["about me", "my interests", "my techs"];
 
 function urlParam() {
     let paramString = window.location.href.split('?')[1];
@@ -232,10 +229,13 @@ function urlParam() {
     for (let pair of queryString.entries()) {
        param = pair[1];
     }
+
+    if(param == '') {
+        param = 'posts'
+    }
+
     return param
 }
-
-console.log(urlParam())
 
 
 const paramDict = {'posts': showPosts, 'projects': showProjects, 'about': showAbout, 'create-account': showCreateAccount, 'login': showLogin, 'contacts': showContacts};
@@ -244,14 +244,19 @@ function renderParam(param) {
     return paramDict[param]()
 }
 
+
+var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post4', 'text4', 'info4', 'link4']];
+var listProjects = [['project1', 'description1', 'link1'], ['project2', 'description2', 'link2'], ['project3', 'description3', 'link3'], ['project4', 'description4', 'link4']];
+var listAbout = ["about me", "my interests", "my techs"];
+
+
+$.ajax({
+    type: "POST",
+    url: "~/db_man.py",
+    data: { param: text}
+  }).done(function( o ) {
+     // do something
+  });
+
+
 renderParam(urlParam());
-
-
-
-// $.ajax({
-//     type: "POST",
-//     url: "~/pythoncode.py",
-//     data: { param: text}
-//   }).done(function( o ) {
-//      // do something
-//   });
