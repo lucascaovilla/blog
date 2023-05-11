@@ -6,12 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     
 
     <header>
         <div class="header-rect">
+            <button name="index" value="posts" class="btn">Posts</button>
+            <h3>left list</h3>
+            <ul class="left-list"></ul>
+            <h3>right list</h3>
+            <ul class="right-list"></ul>
+
             <form action="/" method="get">
                 <i class="posts-icon"></i>
                 <i class="projects-icon"></i>
@@ -19,6 +26,8 @@
                 <i class="contacts-icon"></i>
                 <i class="create-account-icon"></i>
                 <i class="login-icon"></i>
+
+                
                 <button name="index" value="posts" class="text-posts">Posts</button>
                 <button name="index" value="projects" class="text-projects">Projects</button>
                 <button name="index" value="about" class="text-about">About</button>
