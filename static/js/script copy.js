@@ -231,7 +231,7 @@ function urlParam() {
     }
 
     if(param == '') {
-        param = 'about'
+        param = 'posts'
     }
 
     return param
@@ -245,15 +245,15 @@ function renderParam(param) {
 }
 
 
-var listPosts = [];
-var listProjects = [];
+var listPosts = [['post1', 'text1', 'info1', 'link1'], ['post2', 'text2', 'info2', 'link2'], ['post3', 'text3', 'info3', 'link3'], ['post4', 'text4', 'info4', 'link4']];
+var listProjects = [['project1', 'description1', 'link1'], ['project2', 'description2', 'link2'], ['project3', 'description3', 'link3'], ['project4', 'description4', 'link4']];
 var listAbout = ["about me", "my interests", "my techs"];
 
 
 
 $(document).ready(function(){
 
-    $('.text-posts').click(function(){
+    $('.btn').click(function(){
         $.ajax({
             url: '',
             type: 'get',
@@ -262,34 +262,13 @@ $(document).ready(function(){
                 button_text: $(this).text()
             },
             success: function(response){
-                for(var i = 0; i < (response.posts).length;i++) {
-                    listPosts.push(response.posts[i])
-                }
-                showPosts()
+                //$('.btn').text(response.seconds)
+                $('.left-list').append('<li>' + response.seconds + '</li>')
             }
         })
     })
 })
 
-$(document).ready(function(){
-
-    $('.text-projects').click(function(){
-        $.ajax({
-            url: '',
-            type: 'get',
-            contentType: 'application/json',
-            data: {
-                button_text: $(this).text()
-            },
-            success: function(response){
-                for(var i = 0; i < (response.projects).length;i++) {
-                    listProjects.push(response.projects[i])
-                }
-                showProjects()
-            }
-        })
-    })
-})
 
 $('.left-list').on('click', 'li', function(){
     $.ajax({

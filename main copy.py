@@ -12,18 +12,8 @@ def home():
   if request.is_json:
   
     if request.method == 'GET':
-      if request.args.get('button_text') == 'Posts':
-        posts = db_select_all('posts')
-        posts_list = []
-        for post in posts:
-          post = list(post)
-          posts_list.append(post)
-        print(posts_list)
-        return jsonify({'posts': posts_list})
-  
-    if request.method == 'GET':
-      if request.args.get('button_text') == 'Projects':
-        return jsonify({'projects': db_select_all('projects')})
+      seconds = time()
+      return jsonify({'seconds': seconds})
     
     if request.method == 'POST':
       card_text = json.loads(request.data).get('text')
