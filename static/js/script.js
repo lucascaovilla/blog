@@ -262,7 +262,7 @@ $(document).ready(function(){
                 button_text: $(this).text()
             },
             success: function(response){
-                $('.btn').text(response.seconds)
+                //$('.btn').text(response.seconds)
                 $('.left-list').append('<li>' + response.seconds + '</li>')
             }
         })
@@ -276,7 +276,7 @@ $('.left-list').on('click', 'li', function(){
         type: 'post',
         contentType: 'application/json',
         data: JSON.stringify({
-            text: $(this).text
+            text: $(this).text()
         }),
         success: function(response){
            $('.right-list').append('<li>' + response.data + '</li>')  
