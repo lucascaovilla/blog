@@ -230,9 +230,9 @@ function urlParam() {
        param = pair[1];
     }
 
-    if(param == '') {
-        param = 'about'
-    }
+    // if(param == '') {
+    //     param = 'about'
+    // }
 
     return param
 }
