@@ -216,33 +216,45 @@ function showContacts() {
     divContacts.insertAdjacentHTML('beforeend', '<a href="https://www.linkedin.com/in/lucasgcaovilla/">linkedin</a>');
 }
 
-
-
-
-
-function urlParam() {
-    let paramString = window.location.href.split('?')[1];
-    let queryString = new URLSearchParams(paramString);
-    
-    var param = "";
-
-    for (let pair of queryString.entries()) {
-       param = pair[1];
+function clearHtml() {
+    const divElement = document.getElementById('main-div');
+    while (divElement.firstChild) {
+        divElement.removeChild(divElement.firstChild);
+    divElement.insertAdjacentElement = ""
     }
-
-    // if(param == '') {
-    //     param = 'about'
-    // }
-
-    return param
 }
 
 
-const paramDict = {'posts': showPosts, 'projects': showProjects, 'about': showAbout, 'create-account': showCreateAccount, 'login': showLogin, 'contacts': showContacts};
-
-function renderParam(param) {
-    return paramDict[param]()
+function reloadScreen() {
+    // var postsBtn = document.querySelector('#posts-btn');
+    // postsBtn.addEventListener('click', clearHtml);
+    // postsBtn.addEventListener('click', showPosts);
+    
+    // var projectsBtn = document.querySelector('#projects-btn');
+    // projectsBtn.addEventListener('click', clearHtml);
+    // projectsBtn.addEventListener('click', showProjects);
+    
+    var aboutBtn = document.querySelector('#about-btn');
+    aboutBtn.addEventListener('click', clearHtml);
+    aboutBtn.addEventListener('click', showAbout);
+    
+    var contactsBtn = document.querySelector('#contacts-btn');
+    contactsBtn.addEventListener('click', clearHtml);
+    contactsBtn.addEventListener('click', showContacts);
+    
+    var createAccountBtn = document.querySelector('#create-account-btn');
+    createAccountBtn.addEventListener('click', clearHtml);
+    createAccountBtn.addEventListener('click', showCreateAccount);
+    
+    var loginBtn = document.querySelector('#login-btn');
+    loginBtn.addEventListener('click', clearHtml);
+    loginBtn.addEventListener('click', showLogin);
+    
 }
+
+
+
+
 
 
 var listPosts = [];
@@ -260,12 +272,15 @@ $(document).ready(function(){
             contentType: 'application/json',
             data: {
                 button_text: $(this).text()
+              
             },
             success: function(response){
                 for(var i = 0; i < (response.posts).length;i++) {
                     listPosts.push(response.posts[i])
                 }
-                showPosts()
+                clearHtml();
+                showPosts();
+                listPosts = [];
             }
         })
     })
@@ -285,24 +300,29 @@ $(document).ready(function(){
                 for(var i = 0; i < (response.projects).length;i++) {
                     listProjects.push(response.projects[i])
                 }
-                showProjects()
+                clearHtml();
+                showProjects();
+                listProjects = [];
             }
         })
     })
 })
 
-$('.left-list').on('click', 'li', function(){
-    $.ajax({
-        url: '',
-        type: 'post',
-        contentType: 'application/json',
-        data: JSON.stringify({
-            text: $(this).text()
-        }),
-        success: function(response){
-           $('.right-list').append('<li>' + response.data + '</li>')  
-        }
-    })
-})
+// $('.main-div').on('click', 'li', function(){
+//     $.ajax({
+//         url: '',
+//         type: 'post',
+//         contentType: 'application/json',
+//         data: JSON.stringify({
+//             text: $(this).text()
+//         }),
+//         success: function(response){
+//            $('.right-list').append('<li>' + response.data + '</li>')  
+//         }
+//     })
+// })
 
-renderParam(urlParam());
+// if(urlParam() != 'posts' && urlParam() != 'projects') {
+//     renderParam(urlParam());
+// }
+reloadScreen();
