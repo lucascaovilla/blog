@@ -9,10 +9,12 @@ function print(text) {
 
 
 function showPosts() {
+    const mainDiv = document.getElementById('main-div');
+    mainDiv.insertAdjacentHTML('beforeend', '<ul class="posts-list" id="posts-list">');
+    var postsList = document.getElementById('posts-list');
+
     for(var i = 0; i < listPosts.length; i++) {
-        
-        const mainDiv = document.getElementById('main-div');
-        
+    
         var index = i + 1;
 
         var postTitle = listPosts[i][0];
@@ -25,37 +27,36 @@ function showPosts() {
         var divTitleId = 'post-' + index + '-title';
         var divTextId = 'post-' + index + '-text';
         var divInfoId = 'post-' + index + '-info';
-    
+
+        postsList.insertAdjacentHTML('beforeend', '<li class="post" id="' + divPostId + '">');
+        var postLi = document.getElementById(divPostId);
         
-        mainDiv.insertAdjacentHTML('beforeend', '<div class="post-' + index + '" id="' + divPostId + '">');
-        var divPost = document.getElementById(divPostId);
-        
-        
-        
-        divPost.insertAdjacentHTML('beforeend', '<div class="post-title" id="' + divTitleId + '">');
+        postLi.insertAdjacentHTML('beforeend', '<div class="post-title" id="' + divTitleId + '">');
         var divTitle = document.getElementById(divTitleId);
         divTitle.insertAdjacentHTML('beforeend', '<label>' + postTitle + '</label>');
             
-        divPost.insertAdjacentHTML('beforeend', '<div class="post-text" id="' + divTextId + '">');
+        postLi.insertAdjacentHTML('beforeend', '<div class="post-text" id="' + divTextId + '">');
         var divText = document.getElementById(divTextId);
         divText.insertAdjacentHTML('beforeend', '<label>' + postText + '</label>');
             
-        divPost.insertAdjacentHTML('beforeend', '<div class="post-info" id="' + divInfoId + '">');
+        postLi.insertAdjacentHTML('beforeend', '<div class="post-info" id="' + divInfoId + '">');
         var divInfo = document.getElementById(divInfoId);
         divInfo.insertAdjacentHTML('beforeend', '<label>' + postInfo + '</label>');
         
-        divPost.insertAdjacentHTML('beforeend', '<div class="post-link" id="' + divPostLink + '">');
+        postLi.insertAdjacentHTML('beforeend', '<div class="post-link" id="' + divPostLink + '">');
         var divPostLink = document.getElementById(divPostLink);
         divPostLink.insertAdjacentHTML('beforeend', '<a href="' + postLink + '">Read More')
 
-        mainDiv.insertAdjacentHTML('beforeend', '<br>');
+        
     }
 }
 
 function showProjects() {
+    const mainDiv = document.getElementById('main-div');
+    mainDiv.insertAdjacentHTML('beforeend', '<ul class="projects-list" id="projects-list">');
+    var projectsList = document.getElementById('projects-list');
+
     for(var i = 0; i < listProjects.length; i++) {
-        
-        const mainDiv = document.getElementById('main-div');
         
         var index = i + 1;
 
@@ -67,26 +68,21 @@ function showProjects() {
         var divProjectLink = 'project-' + index + '-link';
         var divTitleId = 'project-' + index + '-title';
         var divDescriptionId = 'project-' + index + '-Description';
-    
         
-        mainDiv.insertAdjacentHTML('beforeend', '<div class="project-' + index + '" id="' + divProjectId + '">');
-        var divProject = document.getElementById(divProjectId);
+        projectsList.insertAdjacentHTML('beforeend', '<li class="project" id="' + divProjectId + '">');
+        var projectLi = document.getElementById(divProjectId);
         
-        
-        
-        divProject.insertAdjacentHTML('beforeend', '<div class="project-title" id="' + divTitleId + '">');
+        projectLi.insertAdjacentHTML('beforeend', '<div class="project-title" id="' + divTitleId + '">');
         var divTitle = document.getElementById(divTitleId);
         divTitle.insertAdjacentHTML('beforeend', '<label>' + projectTitle + '</label>');
             
-        divProject.insertAdjacentHTML('beforeend', '<div class="project-Description" id="' + divDescriptionId + '">');
+        projectLi.insertAdjacentHTML('beforeend', '<div class="project-Description" id="' + divDescriptionId + '">');
         var divDescription = document.getElementById(divDescriptionId);
         divDescription.insertAdjacentHTML('beforeend', '<label>' + projectDescription + '</label>');
             
-        divProject.insertAdjacentHTML('beforeend', '<div class="project-link" id="' + divProjectLink + '">');
+        projectLi.insertAdjacentHTML('beforeend', '<div class="project-link" id="' + divProjectLink + '">');
         var divProjectLink = document.getElementById(divProjectLink);
         divProjectLink.insertAdjacentHTML('beforeend', '<a href="' + projectLink + '">Read More')
-
-        mainDiv.insertAdjacentHTML('beforeend', '<br>');
     }
 }
 
@@ -111,7 +107,7 @@ function showAbout() {
 
     divAboutMe.insertAdjacentHTML('beforeend', '<div class="self-picture" id="self-picture">');
     var divSelfPicture = document.getElementById("self-picture");
-    divSelfPicture.insertAdjacentHTML('beforeend', '<img src="static/Imagem0082.jpg">');
+    divSelfPicture.insertAdjacentHTML('beforeend', '<img src="static/images/image.jpg">');
 
     divAboutMe.insertAdjacentHTML('beforeend', '<div class="self-info" id="self-info">');
     var divSelfInfo = document.getElementById("self-info");

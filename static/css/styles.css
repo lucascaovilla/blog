@@ -2,22 +2,46 @@
 
 body {
   position: absolute;
-  width: 1440px;
+  width: 1335px;
   height: 1024px;
   left: 0px;
   top: 0px;
   background: #CDF49C;
 }
 
+
 /* header-rect */
 
 .header-rect {
   box-sizing: border-box;
   position: absolute;
-  width: 1440px;
+  display: flex;
+  width: 1330px;
   height: 300px;
   left: 0px;
   top: 0px;
+  background: #003B00;
+  border: 10px solid #002B00;
+}
+
+#main-div {
+  top: 300px;
+  box-sizing: border-box;
+  position: relative;
+  width: 1330px;
+
+  left: 0px;
+  padding-bottom: 200px;
+}
+
+/* botom-rect */
+.bottom-rect {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1330px;
+  height: 200px;            /* Footer height */
+  left: 0px;
+  bottom: 5px;
   background: #003B00;
   border: 10px solid #002B00;
 }
@@ -34,16 +58,16 @@ button {
 /* text-posts */
 .text-posts {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 60px;
-  top: 164px;
+  width: 200px;
+  height: 100px;
+  left: 5px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
@@ -52,16 +76,16 @@ button {
 /* text-projects */
 .text-projects {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 300px;
-  top: 164px;
+  width: 200px;
+  height: 100px;
+  left: 225px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
@@ -70,16 +94,16 @@ button {
 /* text-about */
 .text-about {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 540px;
-  top: 164px;
+  width: 200px;
+  height: 100px;
+  left: 445px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
@@ -88,16 +112,16 @@ button {
 /* text-contacts */
 .text-contacts {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 785px;
-  top: 164px;
+  width: 200px;
+  height: 100px;
+  left: 665px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
@@ -106,16 +130,16 @@ button {
 /* text-create-account */
 .text-create-account {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 1020px;
-  top: 173px;
+  width: 200px;
+  height: 100px;
+  left: 885px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
@@ -124,202 +148,104 @@ button {
 /* text-login */
 .text-login {
   position: absolute;
-  width: 120px;
-  height: 36px;
-  left: 1260px;
-  top: 164px;
+  width: 200px;
+  height: 100px;
+  left: 1105px;
+  top: 100px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 46px;
-  display: flex;
+ 
   align-items: center;
   text-align: center;
   color: #000000;
 }
 
-/* posts-icon */
-.posts-icon {
-  position: absolute;
-  width: 75px;
-  height: 60.32px;
-  left: 79px;
-  top: 104px;
-}
 
-/* projects-icon */
-.projects-icon {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  left: 330px;
-  top: 104px;
-}
-
-/* contacts-icon */
-.contacts-icon {
-  position: absolute;
-  width: 50px;
-  height: 35px;
-  left: 820px;
-  top: 124px;
-}
-
-/* login-icon */
-.login-icon {
-  position: absolute;
-  width: 40px;
-  height: 33px;
-  left: 1300px;
-  top: 117px;
-}
-
-/* create-account-icon */
-.create-account-icon {
-  position: absolute;
-  width: 47px;
-  height: 33px;
-  left: 1053px;
-  top: 117px;
-}
-
-/* about-icon */
-.about-icon {
-  position: absolute;
-  width: 50px;
-  height:10px; 
-}
-
-/* about-icon */
-.about-icon {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 575px;
-  top: 116px;
-  }
-  
 /* project-1 */
 .project-1 {
-box-sizing: border-box;
-position: absolute;
-width: 690px;
-height: 300px;
-left: 20px;
-top: 320px;
-background: #2B4D11;
-border: 10px solid #083C00;
+  box-sizing: border-box;
+  position: absolute;
+  width: 690px;
+  height: 300px;
+  left: 20px;
+  top: 320px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
 }
 
 /* project-2 */
 .project-2 {
-box-sizing: border-box;
-position: absolute;
-width: 690px;
-height: 300px;
-left: 730px;
-top: 320px;
-background: #2B4D11;
-border: 10px solid #083C00;
+  box-sizing: border-box;
+  position: absolute;
+  width: 690px;
+  height: 300px;
+  left: 730px;
+  top: 320px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
 }
 
 /* project-3 */
 .project-3 {
-box-sizing: border-box;
-position: absolute;
-width: 690px;
-height: 300px;
-left: 20px;
-top: 640px;
-background: #2B4D11;
-border: 10px solid #083C00;
+  box-sizing: border-box;
+  position: absolute;
+  width: 690px;
+  height: 300px;
+  left: 20px;
+  top: 640px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
 }
 
 /* project-4 */
 .project-4 {
-box-sizing: border-box;
-position: absolute;
-width: 690px;
-height: 300px;
-left: 730px;
-top: 640px;
-background: #2B4D11;
-border: 10px solid #083C00;
-}
-
-/* botom-rect */
-.bottom-rect {
   box-sizing: border-box;
   position: absolute;
-  width: 1440px;
-  height: 200px;
-  left: 0px;
-  top: 824px;
-  background: #003B00;
-  border: 10px solid #002B00;
+  width: 690px;
+  height: 300px;
+  left: 730px;
+  top: 640px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
 }
 
 a {
   color:#000000;
 }
 
-/* post-1 */
-.post-1 {
+.posts-list {
+  list-style-type: none;
+
+}
+
+.post {
   box-sizing: border-box;
-  
-  position: absolute;
-  width: 1400px;
+  width: 1250px;
   height: 100px;
-  left: 20px;
-  top: 320px;
-  
+  margin-block-end: 15px;
   background: #2B4D11;
   border: 10px solid #083C00;
 }
 
-
-/* post-2 */
-.post-2 {
-  box-sizing: border-box;
-  
-  position: absolute;
-  width: 1400px;
-  height: 100px;
-  left: 20px;
-  top: 440px;
-  
-  background: #2B4D11;
-  border: 10px solid #083C00;
+.projects-list {
+  list-style-type: none;
+  margin-block-end: 200px;
 }
 
-
-/* post-3 */
-.post-3 {
+.project {
   box-sizing: border-box;
-  
-  position: absolute;
-  width: 1400px;
-  height: 100px;
-  left: 20px;
-  top: 560px;
-  
+  width: 600px;
+  height: 300px;
+  margin-right: 45px;
+  margin-bottom: 25px;
   background: #2B4D11;
   border: 10px solid #083C00;
+  float: left;
+  /*width: 50%;/*helps to determine number of columns, for instance 33.3% displays 3 columns */
 }
 
 
 
-/* post-4 */
-.post-4 {
-  box-sizing: border-box;
-  
-  position: absolute;
-  width: 1400px;
-  height: 100px;
-  left: 20px;
-  top: 680px;
-  
-  background: #2B4D11;
-  border: 10px solid #083C00;
-}
