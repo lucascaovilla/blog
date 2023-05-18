@@ -47,8 +47,8 @@ function showPosts() {
         var divPostLink = document.getElementById(divPostLink);
         divPostLink.insertAdjacentHTML('beforeend', '<a href="' + postLink + '">Read More')
 
-        
     }
+    showFooter();
 }
 
 function showProjects() {
@@ -84,6 +84,8 @@ function showProjects() {
         var divProjectLink = document.getElementById(divProjectLink);
         divProjectLink.insertAdjacentHTML('beforeend', '<a href="' + projectLink + '">Read More')
     }
+
+    showFooter();
 }
 
 function showAbout() {
@@ -117,6 +119,8 @@ function showAbout() {
     divAboutMe.insertAdjacentHTML('beforeend', '<div class="self-knowledge" id="self-knowledge">');
     var divSelfKnowledge = document.getElementById("self-knowledge");
     divSelfKnowledge.insertAdjacentHTML('beforeend', '<label>' + selfKnowledge + '</label>');
+
+    showFooter();
 }
 
 function showCreateAccount() {
@@ -171,6 +175,7 @@ function showCreateAccount() {
     var divCreateAccountButton = document.getElementById("create-account-button");
     divCreateAccountButton.insertAdjacentHTML('beforeend', '<button>Criar conta</button>');
 
+    showFooter();
 }
 
 function showLogin() {
@@ -180,23 +185,46 @@ function showLogin() {
     mainDiv.insertAdjacentHTML('beforeend', '<div class="login" id="login">');
     var divLogin = document.getElementById("login");
     
-    divLogin.insertAdjacentHTML('beforeend', '<form class="login-form" id="login-form" action="?index=posts">');
-    var formLogin = document.getElementById("login-form");
-    
-    formLogin.insertAdjacentHTML('beforeend', '<div class="input-email" id="input-email">');
-    var divInputEmail = document.getElementById("input-email");
-    divInputEmail.insertAdjacentHTML('beforeend', '<label>Insira seu email:</label>');
-    divInputEmail.insertAdjacentHTML('beforeend', '<input required></input>');
+    divLogin.insertAdjacentHTML('beforeend', '<div class="input-username" id="input-username">');
+    var divInputUsername = document.getElementById("input-username");
+    divInputUsername.insertAdjacentHTML('beforeend', '<label>Usuário:</label>');
+    divInputUsername.insertAdjacentHTML('beforeend', '<input id="username" class="username-input" required></input>');
 
-    formLogin.insertAdjacentHTML('beforeend', '<div class="input-password" id="input-password">');
+    divLogin.insertAdjacentHTML('beforeend', '<div class="input-password" id="input-password">');
     var divInputPassword = document.getElementById("input-password");
     divInputPassword.insertAdjacentHTML('beforeend', '<label>Senha:</label>');
-    divInputPassword.insertAdjacentHTML('beforeend', '<input id="password" required></input>');
+    divInputPassword.insertAdjacentHTML('beforeend', '<input type="password" id="password" class="password-input" required></input>');
 
-    formLogin.insertAdjacentHTML('beforeend', '<div class="login-button" id="login-button">');
+    divLogin.insertAdjacentHTML('beforeend', '<div class="login-button" id="login-button">');
     var divLoginButton = document.getElementById("login-button");
-    divLoginButton.insertAdjacentHTML('beforeend', '<button>Login</button>');
+    divLoginButton.insertAdjacentHTML('beforeend', '<button class="button-login">Login</button>');
 
+    $(document).ready(function(){
+
+        $('.button-login').click(function(){
+            $.ajax({
+                url: '',
+                type: 'get',
+                contentType: 'application/json',
+                data: {
+                    op_id: $(this).text(),
+                    username: $('.username-input').val(),
+                    password: $('.password-input').val()
+                },
+                success: function(response){
+                    if(response.status == "Login successfull!") {
+                        alert(response.status)
+                    } else {
+                        alert(response.status)
+                        clearHtml();
+                        showLogin();
+                    }
+                    }
+    
+                })
+            })
+        })
+    showFooter();
 }
 
 function showContacts() {
@@ -210,6 +238,21 @@ function showContacts() {
     divContacts.insertAdjacentHTML('beforeend', '<a href="https://lucasgrisac@gmail.com">gmail</a>');
     divContacts.insertAdjacentHTML('beforeend', '<a href="https://github.com/lucascaovilla">github</a>');
     divContacts.insertAdjacentHTML('beforeend', '<a href="https://www.linkedin.com/in/lucasgcaovilla/">linkedin</a>');
+}
+
+function showFooter() {
+    const mainDiv = document.getElementById('main-div');
+    
+    mainDiv.insertAdjacentHTML('beforeend', '<footer id="page-footer">');
+    var pageFooter = document.getElementById("page-footer");
+
+    pageFooter.insertAdjacentHTML('beforeend', '<div class="bottom-rect" id="bottom-rect">');
+    var divBottomRect = document.getElementById("bottom-rect");
+    
+    divBottomRect.insertAdjacentHTML('beforeend', '<h4>Contacts, Portfolio and Social Media')
+    divBottomRect.insertAdjacentHTML('beforeend', '<a href="https://lucasgrisac@gmail.com" target=”_blank”>gmail')
+    divBottomRect.insertAdjacentHTML('beforeend', '<a href="https://github.com/lucascaovilla" target=”_blank”>github')
+    divBottomRect.insertAdjacentHTML('beforeend', '<a href="https://www.linkedin.com/in/lucasgcaovilla/" target=”_blank”>linkedin')
 }
 
 function clearHtml() {
@@ -304,6 +347,8 @@ $(document).ready(function(){
     })
 })
 
+
+
 // $('.main-div').on('click', 'li', function(){
 //     $.ajax({
 //         url: '',
@@ -321,4 +366,6 @@ $(document).ready(function(){
 // if(urlParam() != 'posts' && urlParam() != 'projects') {
 //     renderParam(urlParam());
 // }
+
 reloadScreen();
+showAbout();

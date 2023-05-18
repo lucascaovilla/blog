@@ -4,7 +4,7 @@ from sqlite3 import Error
 
 #create the db and the tables for posts and projects
 def db_create_tables():
-  banco = sqlite3.connect('database/blog.db', check_same_thread=False)
+  banco = sqlite3.connect('databases/databases/blog.db')
   cursor = banco.cursor()
   cursor.execute("CREATE TABLE IF NOT EXISTS posts (id text, post_title text, post_text text, post_link text)")
   cursor.execute("CREATE TABLE IF NOT EXISTS projects (id text, project_title, project_description text, project_link text)")
@@ -15,7 +15,7 @@ def db_insert_post(post):
   title = post[0]
   text = post[1]
   link = post[2]
-  banco = sqlite3.connect('database/blog.db', check_same_thread=False)
+  banco = sqlite3.connect('databases/databases/blog.db')
   cursor = banco.cursor()
   cursor.execute("INSERT INTO posts VALUES ('"+index+"', '"+title+"', '"+text+"', '"+link+"')")
   banco.commit()
@@ -26,14 +26,14 @@ def db_insert_project(project):
   title = project[0]
   description = project[1]
   link = project[2]
-  banco = sqlite3.connect('database/blog.db', check_same_thread=False)
+  banco = sqlite3.connect('databases/databases/blog.db')
   cursor = banco.cursor()
   cursor.execute("INSERT INTO projects VALUES ('"+index+"', '"+title+"', '"+description+"', '"+link+"')")
   banco.commit()
   
 #select all data from a certain table
 def db_select_all(table):
-  banco = sqlite3.connect('database/blog.db', check_same_thread=False)
+  banco = sqlite3.connect('databases/databases/blog.db')
   cursor = banco.cursor()
   cursor.execute("SELECT * FROM '"+table+"'")
   #print(cursor.fetchall())
@@ -41,7 +41,7 @@ def db_select_all(table):
 
 #delete a row from a given table based on the given index
 def db_delete(table, index):
-  banco = sqlite3.connect('database/blog.db', check_same_thread=False)
+  banco = sqlite3.connect('databases/databases/blog.db')
   cursor = banco.cursor()
   try:
       cursor.execute("DELETE from '"+table+"' WHERE id = '"+index+"'")

@@ -31,7 +31,7 @@ body {
   width: 1330px;
 
   left: 0px;
-  padding-bottom: 200px;
+  padding-bottom: 500px;
 }
 
 /* botom-rect */
@@ -163,55 +163,6 @@ button {
   color: #000000;
 }
 
-
-/* project-1 */
-.project-1 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 20px;
-  top: 320px;
-  background: #2B4D11;
-  border: 10px solid #083C00;
-}
-
-/* project-2 */
-.project-2 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 730px;
-  top: 320px;
-  background: #2B4D11;
-  border: 10px solid #083C00;
-}
-
-/* project-3 */
-.project-3 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 20px;
-  top: 640px;
-  background: #2B4D11;
-  border: 10px solid #083C00;
-}
-
-/* project-4 */
-.project-4 {
-  box-sizing: border-box;
-  position: absolute;
-  width: 690px;
-  height: 300px;
-  left: 730px;
-  top: 640px;
-  background: #2B4D11;
-  border: 10px solid #083C00;
-}
-
 a {
   color:#000000;
 }
@@ -232,7 +183,7 @@ a {
 
 .projects-list {
   list-style-type: none;
-  margin-block-end: 200px;
+  /* margin-block-end: 200px; */
 }
 
 .project {

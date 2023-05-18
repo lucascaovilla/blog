@@ -11,38 +11,23 @@
     </head>
     
 
-    <header>
-        <div class="header-rect">
-            
-                <button id="posts-btn" class="text-posts">Posts</button>
-       
-                <button id="projects-btn" class="text-projects">Projects</button>
-
-                <button id="about-btn" class="text-about">About</button>
-              
-                <button id="contacts-btn" class="text-contacts">Contacts</button>
-               
-                <button id="create-account-btn" class="text-create-account">Create Account</button>
-                
-                <button id="login-btn" class="text-login">Login</button>
-          
-        </div>
-    </header>
-    
     <body>        
+        <header>
+            <div class="header-rect">
+                    <button id="posts-btn" class="text-posts">Posts</button>
+                    <button id="projects-btn" class="text-projects">Projects</button>
+                    <button id="about-btn" class="text-about">About</button>   
+                    <button id="contacts-btn" class="text-contacts">Contacts</button>   
+                    <button id="create-account-btn" class="text-create-account">Create Account</button>
+                    <button id="login-btn" class="text-login">Login</button>
+            </div>
+        </header>
         <main>
             <div id="main-div"><br></div>
         </main>
         
-        <footer>
-            <div class="bottom-rect">
-                <h4>Contacts, Portfolio and Social Media</h4>
-                <a href="https://lucasgrisac@gmail.com" target=”_blank”>gmail</a>
-                <a href="https://github.com/lucascaovilla" target=”_blank”>github</a>
-                <a href="https://www.linkedin.com/in/lucasgcaovilla/" target=”_blank”>linkedin</a>
-            </div>
-        </footer>
-        <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+        
     </body>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
     </html>
     
