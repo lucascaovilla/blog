@@ -211,15 +211,7 @@ function showLogin() {
                     username: $('.username-input').val(),
                     password: $('.password-input').val()
                 },
-                success: function(response){
-                    if(response.status == "Login successfull!") {
-                        alert(response.status)
-                    } else {
-                        alert(response.status)
-                        clearHtml();
-                        showLogin();
-                    }
-                    }
+                
     
                 })
             })

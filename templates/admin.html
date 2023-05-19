@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    
+
+    <body>        
+        <header>
+            <div class="header-rect">
+                    <button id="posts-btn" class="text-posts">Posts</button>
+                    <button id="projects-btn" class="text-projects">Projects</button>
+                    <button id="about-btn" class="text-about">About</button>   
+                    <button id="contacts-btn" class="text-contacts">Contacts</button>   
+                    <button id="create-account-btn" class="text-create-account">Create Account</button>
+                    <button id="login-btn" class="text-login">Login</button>
+            </div>
+        </header>
+        <main>
+            <div id="main-div"><br></div>
+        </main>
+        
+        
+    </body>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </html>
+    

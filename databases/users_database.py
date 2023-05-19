@@ -31,6 +31,6 @@ def handle_admin(username, password):
     if cur.fetchall():
         #services
         #secrets
-        return("Login successfull!".encode())
+        return(True)
     else:
-        return("Login failed!".encode())
+        return(False)

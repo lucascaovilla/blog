@@ -28,13 +28,9 @@ def home():
       if request.args.get('op_id') == 'Login' or request.args.get('op_id') == 'login':
         username = request.args.get('username')
         password = hashlib.sha256(request.args.get('password').encode()).hexdigest()
-        print("----------")
-        print(username)
-        print("----------")
-        print(password)
-        print("----------")
         status = handle_admin(username, password)
-        return jsonify({'status': status.decode()})
+        if status:
+          return render_template('admin.html')
       
       
     if request.method == 'POST':
