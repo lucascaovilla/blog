@@ -178,46 +178,86 @@ function showCreateAccount() {
     showFooter();
 }
 
-function showLogin() {
+// function showLogin() {
         
-    const mainDiv = document.getElementById('main-div');
+//     const mainDiv = document.getElementById('main-div');
     
-    mainDiv.insertAdjacentHTML('beforeend', '<div class="login" id="login">');
-    var divLogin = document.getElementById("login");
+//     mainDiv.insertAdjacentHTML('beforeend', '<div class="login" id="login">');
+//     var divLogin = document.getElementById("login");
     
-    divLogin.insertAdjacentHTML('beforeend', '<div class="input-username" id="input-username">');
-    var divInputUsername = document.getElementById("input-username");
-    divInputUsername.insertAdjacentHTML('beforeend', '<label>Usuário:</label>');
-    divInputUsername.insertAdjacentHTML('beforeend', '<input id="username" class="username-input" required></input>');
+//     divLogin.insertAdjacentHTML('beforeend', '<div class="input-username" id="input-username">');
+//     var divInputUsername = document.getElementById("input-username");
+//     divInputUsername.insertAdjacentHTML('beforeend', '<label>Usuário:</label>');
+//     divInputUsername.insertAdjacentHTML('beforeend', '<input id="username" class="username-input" required></input>');
 
-    divLogin.insertAdjacentHTML('beforeend', '<div class="input-password" id="input-password">');
-    var divInputPassword = document.getElementById("input-password");
-    divInputPassword.insertAdjacentHTML('beforeend', '<label>Senha:</label>');
-    divInputPassword.insertAdjacentHTML('beforeend', '<input type="password" id="password" class="password-input" required></input>');
+//     divLogin.insertAdjacentHTML('beforeend', '<div class="input-password" id="input-password">');
+//     var divInputPassword = document.getElementById("input-password");
+//     divInputPassword.insertAdjacentHTML('beforeend', '<label>Senha:</label>');
+//     divInputPassword.insertAdjacentHTML('beforeend', '<input type="password" id="password" class="password-input" required></input>');
 
-    divLogin.insertAdjacentHTML('beforeend', '<div class="login-button" id="login-button">');
-    var divLoginButton = document.getElementById("login-button");
-    divLoginButton.insertAdjacentHTML('beforeend', '<button class="button-login">Login</button>');
+//     divLogin.insertAdjacentHTML('beforeend', '<div class="login-button" id="login-button">');
+//     var divLoginButton = document.getElementById("login-button");
+//     divLoginButton.insertAdjacentHTML('beforeend', '<button class="button-login">Login</button>');
 
-    $(document).ready(function(){
+//     $(document).ready(function(){
 
-        $('.button-login').click(function(){
-            $.ajax({
-                url: '',
-                type: 'get',
-                contentType: 'application/json',
-                data: {
-                    op_id: $(this).text(),
-                    username: $('.username-input').val(),
-                    password: $('.password-input').val()
-                },
-                
-    
-                })
-            })
-        })
-    showFooter();
+//         $('.button-login').click(function(){
+//             var username = $('.username-input').val();
+//             var password = $('.password-input').val();
+//             if(username != '' && password != '') {
+//                 $.ajax({
+//                     url: '',
+//                     type: 'get',
+//                     contentType: 'application/json',
+//                     data: {
+//                         op_id: $(this).text(),
+//                         username: username,
+//                         password: password
+//                     },
+//                     success: function(response) {
+//                         alert(response.status);
+//                     }
+//                 })
+//             }    
+//         })
+//     })
+//     showFooter();
+// }
+
+function showLogin() {
+    $(document).ready(function(){  
+        $('.button-login').click(function(){  
+             var username = $('#username').val();  
+             var password = $('#password').val();  
+             if(username != '' && password != '')  
+             {  
+                  $.ajax({  
+                       url:"/action",  
+                       method:"POST",  
+                       data: {username:username, password:password},  
+                       success:function(data)  
+                       {  
+                           if(data == 'No-data')  
+                           {  
+                               alert("Invalid Email Or Password!");  
+                              }  
+                              else 
+                              {  
+                                alert(data);
+                                 $('#loginModal').hide();  
+                                 location.reload();  
+                            }  
+                       }  
+                  });  
+             }  
+             else 
+             {  
+                  alert("Both Fields are required");  
+             }  
+        });    
+   });  
 }
+
 
 function showContacts() {
         
@@ -339,7 +379,37 @@ $(document).ready(function(){
     })
 })
 
-
+$(document).ready(function(){  
+    $('#login_button').click(function(){  
+         var username = $('#username').val();  
+         var password = $('#password').val();  
+         if(username != '' && password != '')  
+         {  
+              $.ajax({  
+                   url:"/action",  
+                   method:"POST",  
+                   data: {username:username, password:password},  
+                   success:function(data)  
+                   {  
+                       if(data == 'No-data')  
+                       {  
+                           alert("Invalid Email Or Password!");  
+                          }  
+                          else 
+                          {  
+                            alert(data);
+                             $('#loginModal').hide();  
+                             location.reload();  
+                        }  
+                   }  
+              });  
+         }  
+         else 
+         {  
+              alert("Both Fields are required");  
+         }  
+    });    
+}); 
 
 // $('.main-div').on('click', 'li', function(){
 //     $.ajax({

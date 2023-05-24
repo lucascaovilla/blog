@@ -1,33 +1,56 @@
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
+<!DOCTYPE html>  
+ <html>  
+<head>  
+<title>Python Flask Login Form Using Bootstrap Modal with Ajax Jquery password hash and session</title>  
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>  
+<body>  
+     <div class="container" style="width:700px;">  
+          <h3 align="center">Python Flask Login Form Using Bootstrap Modal with Ajax Jquery password hash and session</h3><br />  
+          <br />  
+          <br />  
+          <!--<p>hash : {{ hash }}</p>
+          <p>hash : {{ check_hash }}</p> -->
+          <br />  
+          <br />  
+          <br />  
+          {% if session.logged_in %}
+          <div align="center">  
+               <h1>Welcome - {{session.username}}</h1><br />  
+               <a href="/logout">Logout</a>  
+          </div>  
+          {% else %}  
+          <div align="center">  
+               <a data-target="#myModal" role="button" class="btn btn-warning" data-toggle="modal"><span class="glyphicon glyphicon-hand-up"></span>Login</a>
+          </div>  
+          {% endif %} 
+     </div>  
+     <br />  
+             
+ <div id="myModal" class="modal fade">  
+      <div class="modal-dialog">  
+   <!-- Modal content-->  
+           <div class="modal-content">  
+                <div class="modal-header">  
+                     <button type="button" class="close" data-dismiss="modal">×</button>  
+                     <h4 class="modal-title">Python Flask Login Form Using Bootstrap Modal with Ajax Jquery password hash and session</h4>  
+                </div>  
+                <div class="modal-body">  
+                     <label>Username</label>  
+                     <input type="text" name="username" id="username" class="form-control" />  
+                     <br />  
+                     <label>Password</label>  
+                     <input type="password" name="password" id="password" class="form-control" />  
+                     <br />  
+                     <button type="button" name="login_button" id="login_button" class="btn btn-warning">Login</button>  
+                </div>  
+           </div>  
+      </div>  
+ </div>
+ 
+ <script defer src="{{ url_for('static', filename='js/admin_script.js') }}"></script>
     
-
-    <body>        
-        <header>
-            <div class="header-rect">
-                    <button id="posts-btn" class="text-posts">Posts</button>
-                    <button id="projects-btn" class="text-projects">Projects</button>
-                    <button id="about-btn" class="text-about">About</button>   
-                    <button id="contacts-btn" class="text-contacts">Contacts</button>   
-                    <button id="create-account-btn" class="text-create-account">Create Account</button>
-                    <button id="login-btn" class="text-login">Login</button>
-            </div>
-        </header>
-        <main>
-            <div id="main-div"><br></div>
-        </main>
-        
-        
-    </body>
-    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
-    </html>
-    
+      </body>  
+ </html>  
