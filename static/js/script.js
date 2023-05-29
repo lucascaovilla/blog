@@ -273,12 +273,9 @@ function showContacts() {
 }
 
 function showFooter() {
-    const mainDiv = document.getElementById('main-div');
-    
-    mainDiv.insertAdjacentHTML('beforeend', '<footer id="page-footer">');
-    var pageFooter = document.getElementById("page-footer");
+    const footer = document.getElementById('footer');
 
-    pageFooter.insertAdjacentHTML('beforeend', '<div class="bottom-rect" id="bottom-rect">');
+    footer.insertAdjacentHTML('beforeend', '<div class="bottom-rect" id="bottom-rect">');
     var divBottomRect = document.getElementById("bottom-rect");
     
     divBottomRect.insertAdjacentHTML('beforeend', '<h4>Contacts, Portfolio and Social Media')
@@ -291,10 +288,18 @@ function clearHtml() {
     const divElement = document.getElementById('main-div');
     while (divElement.firstChild) {
         divElement.removeChild(divElement.firstChild);
-    divElement.insertAdjacentElement = ""
+    divElement.insertAdjacentElement = "";
     }
+    clearFooter();
 }
 
+function clearFooter() {
+    const footerElement = document.getElementById('footer');
+    while (footerElement.firstChild) {
+        footerElement.removeChild(footerElement.firstChild);
+        footerElement.insertAdjacentElement = "";
+    }
+}
 
 function reloadScreen() {
     // var postsBtn = document.querySelector('#posts-btn');

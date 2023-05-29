@@ -34,6 +34,7 @@ body {
 
 /* botom-rect */
 .bottom-rect {
+  clear: left;
   box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -180,6 +181,7 @@ a {
 
 .projects-list {
   list-style-type: none;
+  display: block;
   /* margin-block-end: 200px; */
 }
 
@@ -191,9 +193,31 @@ a {
   margin-bottom: 25px;
   background: #2B4D11;
   border: 10px solid #083C00;
-  float: left;
-  /*width: 50%;/*helps to determine number of columns, for instance 33.3% displays 3 columns */
+  width: 40%;/*helps to determine number of columns, for instance 33.3% displays 3 columns */
 }
 
+.projects:nth-child(2n) {
+  padding-top: 100px;
+}
+
+.post:hover {
+  color: #C78C19;
+}
+
+.project:hover {
+  color: #C78C19;
+}
+
+.header-rect button:hover {
+  color: #C78C19;
+  font-size: 40px;
+  border: 2px solid #C78C19;
+  border-radius: 35px;
+  text-decoration: underline;
+}
+.header-rect button:active {
+  color: #088C19;
+  text-decoration: underline;
+}
 
 
