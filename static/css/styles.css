@@ -1,0 +1,223 @@
+/* body-rect */
+
+body {
+  position: absolute;
+  width: 100%;
+  display: block;
+  left: 0px;
+  top: 0px;
+  background: #CDF49C;
+}
+
+
+/* header-rect */
+
+.header-rect {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  left: 0px;
+  top: 0px;
+  background: #003B00;
+  border: 10px solid #002B00;
+}
+
+#main-div {
+  top: 300px;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding-bottom: 500px;
+}
+
+/* botom-rect */
+.bottom-rect {
+  clear: left;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0px;         /* Footer height */
+  background: #003B00;
+  border: 10px solid #002B00;
+}
+
+/* button */
+button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* text-posts */
+.text-posts {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 5px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* text-projects */
+.text-projects {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 225px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* text-about */
+.text-about {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 445px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* text-contacts */
+.text-contacts {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 665px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* text-create-account */
+.text-create-account {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 885px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* text-login */
+.text-login {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 1105px;
+  top: 100px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+ 
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+a {
+  color:#000000;
+}
+
+.posts-list {
+  list-style-type: none;
+
+}
+
+.post {
+  box-sizing: border-box;
+  width: 1250px;
+  height: 100px;
+  margin-block-end: 15px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
+}
+
+.projects-list {
+  list-style-type: none;
+  display: block;
+  /* margin-block-end: 200px; */
+}
+
+.project {
+  box-sizing: border-box;
+  width: 600px;
+  height: 300px;
+  margin-right: 45px;
+  margin-bottom: 25px;
+  background: #2B4D11;
+  border: 10px solid #083C00;
+  width: 40%;/*helps to determine number of columns, for instance 33.3% displays 3 columns */
+}
+
+.projects:nth-child(2n) {
+  padding-top: 100px;
+}
+
+.post:hover {
+  color: #C78C19;
+}
+
+.project:hover {
+  color: #C78C19;
+}
+
+.header-rect button:hover {
+  color: #C78C19;
+  font-size: 40px;
+  border: 2px solid #C78C19;
+  border-radius: 35px;
+  text-decoration: underline;
+}
+.header-rect button:active {
+  color: #088C19;
+  text-decoration: underline;
+}
+
+
