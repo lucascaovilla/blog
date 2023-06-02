@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-    
 <body>
     <header>
         <div class="header-rect">
@@ -21,25 +20,36 @@
     </header>
     
     <main>
-        <ul>
-            {% for post in posts %}
-                <li class="post" id="post-{{post.id}}">
-                    <a href="/post?id={{post.link}}"></a>
-                    <p>{{post.title}}</p>
-                    <p>{{post.text}}</p>
-                </li>
-            {% endfor %}
+        <div id="main-div">  
+            <img src="static/images/image.jpg"></p>
+            <p>Name</p>
+            <p>Age</p>
+            <p>Knowledge</p>
+            <p>Experience</p>
+            <p>Interests</p>
+            <p>Interests</p>
+            <p>History</p>
+        </div>
+    </main>
 
-            {% for project in projects %}
-                <li class="project" id="project-{{project.id}}">
-                    <a href="/project?id={{project.link}}"></a>
-                    <p>{{project.title}}</p>
-                    <p>{{project.description}}</p>
-                </li>
-            {% endfor %}
-        </ul>
+    <footer>
+        <div class="bottom-rect" id="bottom-rect">
+            <h4>Contacts, Portfolio and Social Media</h4>
+            <a href="https://lucasgrisac@gmail.com" target="_blank">gmail</a>
+            <a href="https://github.com/lucascaovilla" target="_blank">github</a>
+            <a href="https://www.linkedin.com/in/lucasgcaovilla/" target="_blank">linkedin</a>
+        </div>
+    </footer>
     
-    </main>   
 </body>
 </html>
     
+
+
+
+
+
+
+        
+
+
