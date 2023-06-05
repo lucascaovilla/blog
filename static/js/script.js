@@ -9,7 +9,7 @@ $(document).ready(function(){
                     method:"POST",  
                     data: {username:username, password:password},  
                     success:function(data)  
-                    {  
+                    {
                          if(data == 'No-data')  
                          {  
                               alert("Invalid Email Or Password!");  

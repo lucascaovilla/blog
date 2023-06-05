@@ -31,7 +31,7 @@ def action():
         if handle_admin(username, password):
             session['logged_in'] = True
             session['username'] = username
-            msg = 'success'
+            msg = 'Success! Welcome ' + username
             return jsonify(msg)
         else:
                msg = 'No-data'
