@@ -110,7 +110,7 @@ a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}
 
 .close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer;filter:alpha(opacity=50);opacity:.5}
 
-button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;border:0}
+button.close{padding:0;cursor:pointer;background:0 0;border:0}
 
 .modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}
 
