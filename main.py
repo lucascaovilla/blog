@@ -2,7 +2,6 @@ from databases.blog_database import sel_all_posts, sel_all_projects
 from databases.users_database import handle_admin
    
 from flask import Flask, render_template, request, redirect, url_for, jsonify, session
-from time import time
 import json
 import hashlib
 
