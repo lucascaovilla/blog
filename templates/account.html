@@ -3,8 +3,7 @@
 <head>  
 <title>Python Flask Login Form Using Bootstrap Modal with Ajax Jquery password hash and session</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles-modal.css') }}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -12,7 +11,7 @@
 </head>  
 <body>  
      <div class="container" style="width:700px;">  
-          <h3 align="center">Login to your blog account</h3><br /> 
+          <h3 align="center">Logged to your blog account</h3><br /> 
           <br />  
           {% if session.logged_in %}
           <div align="center">  
