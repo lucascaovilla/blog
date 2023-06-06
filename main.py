@@ -1,8 +1,7 @@
 from databases.blog_database import sel_all_posts, sel_all_projects
-from databases.users_database import handle_admin
+from databases.users_database import handle_user, insert_user
    
-from flask import Flask, render_template, request, redirect, url_for, jsonify, session
-import json
+from flask import Flask, render_template, request, redirect, jsonify, session
 import hashlib
 
 
@@ -19,29 +18,40 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/login')
+@app.route("/login",methods=["POST","GET"])
 def login():
-    return render_template('account.html')
-
-@app.route("/action",methods=["POST","GET"])
-def action():
     if request.method == 'POST':
         username = request.form['username']
         password = hashlib.sha256(request.form['password'].encode()).hexdigest()
-        if handle_admin(username, password):
+        if handle_user(username, password):
             session['logged_in'] = True
             session['username'] = username
             msg = 'Success! Welcome ' + username
-            return jsonify(msg)
         else:
-               msg = 'No-data'
-               return jsonify(msg)
-    return render_template('account.html')
+            msg = 'No-data'
+        return jsonify(msg)
+           
+@app.route("/create-account",methods=["POST","GET"])
+def create_account():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = hashlib.sha256(request.form['password'].encode()).hexdigest()
+        if insert_user(username, email, password):
+            session['logged_in'] = True
+            session['username'] = username
+            msg = 'Success! Welcome ' + username
+        else:
+            msg = 'No-data'
+        return jsonify(msg)
+           
 
- 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
-  
+    
+
+
+
 app.run(host='0.0.0.0')
