@@ -54,3 +54,29 @@ $(document).ready(function(){
           }
           });    
      });
+
+
+$(document).ready(function(){  
+     $('#create-post-button').click(function(){  
+          var title = $('#new-post-title').val();
+          var text = $('#new-post-text').val();
+          if(title != '' && text != '') {  
+               $.ajax({  
+                    url:"/create-post",  
+                    method:"POST",  
+                    data: {title:title, text:text},  
+                    success:function(data) {
+                         if(data == 'No-data') {  
+                              alert("This title have already been used! Try another one.");  
+                         } else {  
+                              alert(data);
+                              $('#createPostModal').hide();  
+                              location.reload();  
+                         }  
+                    }  
+               });  
+          } else {  
+               alert("Both Fields are required");  
+          }  
+     });    
+});
