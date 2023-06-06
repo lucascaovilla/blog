@@ -45,7 +45,6 @@ def create_account():
             msg = 'No-data'
         return jsonify(msg)
            
-
 @app.route('/logout')
 def logout():
     session.clear()
