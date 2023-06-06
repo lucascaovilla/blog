@@ -18,7 +18,7 @@
         <div class="header-rect">
             <a href="/">Posts</a>
             <a href="/?projects=projects">Projects</a>
-            <a href="/about">About</a>
+            <a href="/?about=about">About</a>
             
             {% if session.logged_in %}
             <a href="/create-post">Create Post</a>
@@ -93,7 +93,21 @@
                     <p>{{project.description}}</p>
                 </li>
             {% endfor %}
+
         </ul>
+
+        {% if about %}
+            <div id="main-div">  
+                <img src="static/images/image.jpg"></p>
+                <p>Name</p>
+                <p>Age</p>
+                <p>Knowledge</p>
+                <p>Experience</p>
+                <p>Interests</p>
+                <p>Interests</p>
+                <p>History</p>
+            </div>
+        {% endif %}
     
     </main>   
 </body>

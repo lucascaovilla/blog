@@ -12,11 +12,9 @@ app.secret_key = "blog"
 def home():
     if request.args.get('projects') == 'projects':     
         return render_template('index.html', projects = sel_all_projects())
+    if request.args.get('about') == 'about':     
+        return render_template('index.html', about = True)
     return render_template('index.html', posts = sel_all_posts())
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
 
 @app.route("/login",methods=["POST","GET"])
 def login():

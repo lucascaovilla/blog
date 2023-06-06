@@ -47,6 +47,17 @@ main ul {
   margin-top: 25px;
 }
 
+#main-div {
+  top: 300px;
+  box-sizing: border-box;
+  position: relative;
+  width: 80%;
+  list-style-type: none;
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+}
+
 .content {
   box-sizing: border-box;
   width: 100%;
