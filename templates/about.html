@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -16,38 +16,37 @@
 <body>
     <header>
         <div class="header-rect">
-            <a class="text-posts" href="/">Posts</a>
-            <a class="text-projects" href="/?projects=projects">Projects</a>
-            <a class="text-about" href="/about">About</a>   
-            <a class="text-create-account" href="/create-account">Create Account</a>
+            <a href="/">Posts</a>
+            <a href="/?projects=projects">Projects</a>
+            <a href="/about">About</a>
+            <a href="/create-account">Create Account</a>
             
             {% if session.logged_in %}
-            <a  class='text-logout' href="/logout">Logout</a>  
-            </div>  
+            <a href="/logout">Logout</a>
             {% else %}  
-            <a class='text-login' data-target="#myModal" role="button" data-toggle="modal">Login</a>
+            <a data-target="#myModal" data-toggle="modal">Login</a>
             {% endif %}
-                    
-            <div id="myModal" class="modal fade">  
+                   
+           <div id="myModal" class="modal fade">  
                 <div class="modal-dialog">  
             <!-- Modal content-->  
-                        <div class="modal-content">  
-                            <div class="modal-header">  
-                                <button type="button" class="close" data-dismiss="modal">×</button>  
-                                <h4 class="modal-title">Login to your blog account</h4>  
-                            </div>  
-                            <div class="modal-body">  
-                                <label>Username</label>  
-                                <input type="text" name="username" id="username" class="form-control" />  
-                                <br />  
-                                <label>Password</label>  
-                                <input type="password" name="password" id="password" class="form-control" />  
-                                <br />  
-                                <button type="button" name="login_button" id="login_button" class="btn btn-warning">Login</button>  
-                            </div>  
+                    <div class="modal-content">  
+                        <div class="modal-header">  
+                               <button type="button" class="close" data-dismiss="modal">×</button>  
+                               <h4 class="modal-title">Login to your blog account</h4>  
                         </div>  
+                        <div class="modal-body">  
+                            <label for="username">Username</label>  
+                            <input type="text" name="username" id="username" class="form-control" />  
+                            <br />
+                            <label for="password">Password</label>  
+                            <input type="password" name="password" id="password" class="form-control" />  
+                            <br />  
+                            <button type="button" name="login_button" id="login_button" class="btn btn-warning">Login</button>  
+                        </div>  
+                    </div>  
                 </div>  
-            </div>
+           </div>
         </div>
     </header>
     
