@@ -58,6 +58,86 @@ main ul {
   margin-top: 25px;
 }
 
+img {
+  width: 200px;
+  border-radius: 100px;
+  float:left
+}
+
+#main-div p{
+  padding-left: 215px;
+}
+
+#name {
+  font-family: 'Jost';
+  font-weight: bolder;
+  font-size:22px;
+}
+#age {
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size:20px;
+}
+#skills {
+  font-family: 'Jost';
+  font-weight: bold;
+  font-size:20px
+}
+#focus {
+  font-family: 'Jost';
+  font-weight: bold;
+  font-size:20px
+}
+#experience {
+  font-family: 'Jost';
+  font-weight: bold;
+  font-size:20px
+}
+#interests {
+  font-family: 'Jost';
+  font-weight: bold;
+  font-size:20px
+}
+
+#interests::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  margin:auto;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+
+th, td {
+  padding: 6px;
+  border: #303030 solid 2px;
+}
+
+
+
+tbody tr:nth-child(odd), tbody tr:nth-child(odd) a {
+  color: #fff;
+  background-color: #002B00;
+  text-decoration: none;
+}
+
+tbody tr:nth-child(even), tbody tr:nth-child(even) a {
+  color: #fff;
+  background-color: #003B00;
+  text-decoration: none;
+}
+
+
+tbody tr td:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
 .content {
   box-sizing: border-box;
   width: 100%;
