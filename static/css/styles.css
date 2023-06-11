@@ -18,7 +18,6 @@ body {
   border: 10px solid #002B00;
 }
 
-
 .header-rect a {
   position: relative;
   height: 50px;
@@ -32,7 +31,6 @@ body {
   width: 20%;
   cursor:pointer
 }
-
 .header-rect a:hover {color: #C78C19; font-size: 30px;text-decoration: underline; transition: 500ms}
 .header-rect a:active {transition: 0ms; color: #2288ff; text-decoration: underline}
 
@@ -58,85 +56,27 @@ main ul {
   margin-top: 25px;
 }
 
-img {
-  width: 200px;
-  border-radius: 100px;
-  float:left
-}
+img {width: 200px; border-radius: 100px; float:left}
 
-#main-div p{
-  padding-left: 215px;
-}
+#main-div p{padding-left: 215px; font-family: 'Jost'; font-size: 20px;}
+#name {font-weight: bolder; font-size:22px;}
+#age {font-weight: 400;}
+#skills {font-weight: bold;}
+#focus {font-weight: bold;}
+#experience {font-weight: bold;}
+#interests {font-weight: bold;}
 
-#name {
-  font-family: 'Jost';
-  font-weight: bolder;
-  font-size:22px;
-}
-#age {
-  font-family: 'Jost';
-  font-weight: 400;
-  font-size:20px;
-}
-#skills {
-  font-family: 'Jost';
-  font-weight: bold;
-  font-size:20px
-}
-#focus {
-  font-family: 'Jost';
-  font-weight: bold;
-  font-size:20px
-}
-#experience {
-  font-family: 'Jost';
-  font-weight: bold;
-  font-size:20px
-}
-#interests {
-  font-family: 'Jost';
-  font-weight: bold;
-  font-size:20px
-}
+#interests::after {content: ""; clear: both; display: table;}
 
-#interests::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+table {margin:auto; margin-top: 50px; margin-bottom: 200px;}
 
-table {
-  margin:auto;
-  margin-top: 50px;
-  margin-bottom: 200px;
-}
+th, td {padding: 6px; border: #303030 solid 2px;}
 
+tbody tr:nth-child(odd), tbody tr:nth-child(odd) a {color: #fff; background-color: #002B00; text-decoration: none;}
 
-th, td {
-  padding: 6px;
-  border: #303030 solid 2px;
-}
+tbody tr:nth-child(even), tbody tr:nth-child(even) a {color: #fff; background-color: #003B00; text-decoration: none;}
 
-
-
-tbody tr:nth-child(odd), tbody tr:nth-child(odd) a {
-  color: #fff;
-  background-color: #002B00;
-  text-decoration: none;
-}
-
-tbody tr:nth-child(even), tbody tr:nth-child(even) a {
-  color: #fff;
-  background-color: #003B00;
-  text-decoration: none;
-}
-
-
-tbody tr td:hover {
-  font-weight: bold;
-  cursor: pointer;
-}
-
+tbody tr td:hover {font-weight: bold; cursor: pointer;}
 
 .content {
   box-sizing: border-box;
