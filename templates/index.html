@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</head>
     
+</head>
+
 <body>
     <header>
         <div class="header-rect">
@@ -27,13 +26,13 @@
             <a data-target="#create-account" data-toggle="modal">Create Account</a>
             <a data-target="#login" data-toggle="modal">Login</a>
             {% endif %}
-                   
+            
             <div id="create-account" class="modal fade">  
                 <div class="modal-dialog">  
                     <div class="modal-content">  
                         <div class="modal-header">  
-                               <button type="button" class="close" data-dismiss="modal">×</button>  
-                               <h4 class="modal-title">Create your account blog account</h4>  
+                            <button type="button" class="close" data-dismiss="modal">×</button>  
+                            <h4 class="modal-title">Create your account blog account</h4>  
                         </div>  
                         <div class="modal-body">  
                             <label for="create-account-username">Username</label>
@@ -53,13 +52,13 @@
                     </div>  
                 </div>
             </div>
-
+            
             <div id="login" class="modal fade">  
                 <div class="modal-dialog">  
                     <div class="modal-content">  
                         <div class="modal-header">  
-                               <button type="button" class="close" data-dismiss="modal">×</button>  
-                               <h4 class="modal-title">Login to your blog account</h4>  
+                            <button type="button" class="close" data-dismiss="modal">×</button>  
+                            <h4 class="modal-title">Login to your blog account</h4>  
                         </div>  
                         <div class="modal-body">  
                             <label for="login-username">Username</label>  
@@ -77,8 +76,8 @@
                 <div class="modal-dialog">  
                     <div class="modal-content">  
                         <div class="modal-header">  
-                               <button type="button" class="close" data-dismiss="modal">×</button>  
-                               <h4 class="modal-title">Create your own blog post</h4>  
+                            <button type="button" class="close" data-dismiss="modal">×</button>  
+                            <h4 class="modal-title">Create your own blog post</h4>  
                         </div>
                         <div class="modal-body">  
                             <label for="new-post-title">Title</label>
@@ -98,24 +97,24 @@
     <main>
         <ul>
             {% for post in posts %}
-                <li class="content post" id="post-{{post.id}}">
-                    <a href="/post?id={{post.id}}"></a>
-                    <p>{{post.title}}</p>
-                    <p>{{post.text}}</p>
-                </li>
+            <li class="content post" id="post-{{post.id}}">
+                <a href="/post?id={{post.id}}"></a>
+                <p>{{post.title}}</p>
+                <p>{{post.text}}</p>
+            </li>
             {% endfor %}
-
+            
             {% for project in projects %}
-                <li class="content project" id="project-{{project.id}}">
-                    <a href="/project?id={{project.link}}"></a>
-                    <p>{{project.title}}</p>
-                    <p>{{project.description}}</p>
+            <li class="content project" id="project-{{project.id}}">
+                <a href="/project?id={{project.link}}"></a>
+                <p>{{project.title}}</p>
+                <p>{{project.description}}</p>
                 </li>
-            {% endfor %}
-
-        </ul>
-
-        {% if about %}
+                {% endfor %}
+                
+            </ul>
+            
+            {% if about %}
             <div id="main-div">  
                 <img src="static/images/image.png">
                 <p id="name">Lucas Caovilla</p>
@@ -167,21 +166,22 @@
                     </tbody>
                 </table>
             </div>
-        {% endif %}
-        
-        <!--
-        <footer>
-            <div class="bottom-rect" id="bottom-rect">
-                <h4>Contacts, Portfolio and Social Media</h4>
-                <a href="https://lucasgrisac@gmail.com" target="_blank">gmail</a>
-                <a href="https://github.com/lucascaovilla" target="_blank">github</a>
-                <a href="https://www.linkedin.com/in/lucasgcaovilla/" target="_blank">linkedin</a>
-            </div>
-        </footer> 
-        -->
-    </main>   
-</body>
-<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+            {% endif %}
+            
+            <!--
+                <footer>
+                    <div class="bottom-rect" id="bottom-rect">
+                        <h4>Contacts, Portfolio and Social Media</h4>
+                        <a href="https://lucasgrisac@gmail.com" target="_blank">gmail</a>
+                        <a href="https://github.com/lucascaovilla" target="_blank">github</a>
+                        <a href="https://www.linkedin.com/in/lucasgcaovilla/" target="_blank">linkedin</a>
+                    </div>
+                </footer> 
+            -->
+        </main>   
+    </body>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 </html>
 
 
