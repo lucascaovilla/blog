@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
@@ -14,107 +17,110 @@
 
 <body>
     <header>
-        <div class="header-rect">
-            <a href="/">Posts</a>
-            <a href="/?projects=projects">Projects</a>
-            <a href="/?about=about">About</a>
-            
-            {% if session.logged_in %}
-            <a data-target="#create-post" data-toggle="modal">Create Post</a>
-            <a href="/logout">Logout</a>
-            {% else %}
-            <a data-target="#create-account" data-toggle="modal">Create Account</a>
-            <a data-target="#login" data-toggle="modal">Login</a>
-            {% endif %}
-            
-            <div id="create-account" class="modal fade">  
-                <div class="modal-dialog">  
-                    <div class="modal-content">  
-                        <div class="modal-header">  
-                            <button type="button" class="close" data-dismiss="modal">×</button>  
-                            <h4 class="modal-title">Create your account blog account</h4>  
-                        </div>  
-                        <div class="modal-body">  
-                            <label for="create-account-username">Username</label>
-                            <input type="text" name="create-account-username" id="create-account-username" class="form-control" />  
-                            <br />  
-                            <label for="create-account-email">Email</label>
-                            <input type="email" name="create-account-email" id="create-account-email" class="form-control" />  
-                            <br />
-                            <label for="create-account-password">Password</label>
-                            <input type="password" name="create-account-password" id="create-account-password" class="form-control" />  
-                            <br />  
-                            <label for="create-account-confirm-password">Confirm Password</label>
-                            <input type="password" name="create-account-confirm-password" id="create-account-confirm-password" class="form-control" />  
-                            <br />  
-                            <button type="button" name="create-account-button" id="create-account-button" class="btn btn-warning">Login</button>  
-                        </div>  
+        <a href="/">Posts</a>
+        <a href="/?projects=projects">Projects</a>
+        <a href="/?about=about">About</a>
+        
+        {% if session.logged_in %}
+        <a data-target="#create-post" data-toggle="modal">Create Post</a>
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a data-target="#create-account" data-toggle="modal">Create Account</a>
+        <a data-target="#login" data-toggle="modal">Login</a>
+        {% endif %}
+        
+        <div id="create-account" class="modal fade">
+            <div class="modal-dialog">  
+                <div class="modal-content">  
+                    <div class="modal-header">  
+                        <button type="button" class="close" data-dismiss="modal">×</button>  
+                        <h4 class="modal-title">Create your account blog account</h4>  
                     </div>  
-                </div>
+                    <div class="modal-body">  
+                        <label for="create-account-username">Username</label>
+                        <input type="text" name="create-account-username" id="create-account-username" class="form-control" />  
+                        <br />  
+                        <label for="create-account-email">Email</label>
+                        <input type="email" name="create-account-email" id="create-account-email" class="form-control" />  
+                        <br />
+                        <label for="create-account-password">Password</label>
+                        <input type="password" name="create-account-password" id="create-account-password" class="form-control" />  
+                        <br />  
+                        <label for="create-account-confirm-password">Confirm Password</label>
+                        <input type="password" name="create-account-confirm-password" id="create-account-confirm-password" class="form-control" />  
+                        <br />  
+                        <button type="button" name="create-account-button" id="create-account-button" class="btn btn-warning">Create account</button>  
+                    </div>  
+                </div>  
             </div>
-            
-            <div id="login" class="modal fade">  
-                <div class="modal-dialog">  
-                    <div class="modal-content">  
-                        <div class="modal-header">  
-                            <button type="button" class="close" data-dismiss="modal">×</button>  
-                            <h4 class="modal-title">Login to your blog account</h4>  
-                        </div>  
-                        <div class="modal-body">  
-                            <label for="login-username">Username</label>  
-                            <input type="email" name="login-username" id="login-username" class="form-control" />  
-                            <br />
-                            <label for="login-password">Password</label>  
-                            <input type="password" name="login-password" id="login-password" class="form-control" />  
-                            <br />
-                            <button type="button" name="login-button" id="login-button" class="btn btn-warning">Login</button>  
-                        </div>  
+        </div>
+        <div id="login" class="modal fade">
+            <div class="modal-dialog">  
+                <div class="modal-content">  
+                    <div class="modal-header">  
+                        <button type="button" class="close" data-dismiss="modal">×</button>  
+                        <h4 class="modal-title">Login to your blog account</h4>  
                     </div>  
-                </div>
+                    <div class="modal-body">  
+                        <label for="login-username">Username</label>  
+                        <input type="email" name="login-username" id="login-username" class="form-control" />  
+                        <br />
+                        <label for="login-password">Password</label>  
+                        <input type="password" name="login-password" id="login-password" class="form-control" />  
+                        <br />
+                        <button type="button" name="login-button" id="login-button" class="btn btn-warning">Login</button>  
+                    </div>  
+                </div>  
             </div>
-            <div id="create-post" class="modal fade">  
-                <div class="modal-dialog">  
-                    <div class="modal-content">  
-                        <div class="modal-header">  
-                            <button type="button" class="close" data-dismiss="modal">×</button>  
-                            <h4 class="modal-title">Create your own blog post</h4>  
-                        </div>
-                        <div class="modal-body">  
-                            <label for="new-post-title">Title</label>
-                            <input type="text" name="new-post-title" id="new-post-title" class="form-control" />  
-                            <br />
-                            <label for="new-post-text">Text</label>
-                            <input type="email" name="new-post-text" id="new-post-text" class="form-control" />  
-                            <br />
-                            <button type="button" name="create-post-button" id="create-post-button" class="btn btn-warning">Login</button>  
-                        </div>  
+        </div>
+        <div id="create-post" class="modal fade">
+            <div class="modal-dialog">  
+                <div class="modal-content">  
+                    <div class="modal-header">  
+                        <button type="button" class="close" data-dismiss="modal">×</button>  
+                        <h4 class="modal-title">Create your own blog post</h4>  
+                    </div>
+                    <div class="modal-body">  
+                        <label for="new-post-title">Title</label>
+                        <input type="text" name="new-post-title" id="new-post-title" class="form-control" />  
+                        <br />
+                        <label for="new-post-text">Text</label>
+                        <input type="email" name="new-post-text" id="new-post-text" class="form-control" />  
+                        <br />
+                        <button type="button" name="create-post-button" id="create-post-button" class="btn btn-warning">Post</button>  
                     </div>  
-                </div>
+                </div>  
             </div>
         </div>
     </header>
     
     <main>
-        <ul>
-            {% for post in posts %}
-            <li class="content post" id="post-{{post.id}}">
-                <a href="/post?id={{post.id}}"></a>
-                <p>{{post.title}}</p>
-                <p>{{post.text}}</p>
-            </li>
-            {% endfor %}
-            
-            {% for project in projects %}
-            <li class="content project" id="project-{{project.id}}">
-                <a href="/project?id={{project.link}}"></a>
-                <p>{{project.title}}</p>
-                <p>{{project.description}}</p>
+        {% if render_posts%}
+            <ul>
+                {% for post in posts %}
+                <li class="content post" id="post-{{post.id}}">
+                    <a href="/post?id={{post.id}}"></a>
+                    <p>{{post.title}}</p>
+                    <p>{{post.text}}</p>
                 </li>
                 {% endfor %}
-                
             </ul>
+        {% endif %}
+
+        {% if render_projects %}
+            <ul>
+                {% for project in projects %}
+                <li class="content project" id="project-{{project.id}}">
+                    <a href="/project?id={{project.link}}"></a>
+                    <p>{{project.title}}</p>
+                    <p>{{project.description}}</p>
+                    </li>
+                    {% endfor %}
+            </ul>
+        {% endif%}
+                
             
-            {% if about %}
+        {% if about %}
             <div id="main-div">  
                 <img src="static/images/image.png">
                 <p id="name">Lucas Caovilla</p>
@@ -166,22 +172,20 @@
                     </tbody>
                 </table>
             </div>
-            {% endif %}
-            
-            <!--
-                <footer>
-                    <div class="bottom-rect" id="bottom-rect">
-                        <h4>Contacts, Portfolio and Social Media</h4>
-                        <a href="https://lucasgrisac@gmail.com" target="_blank">gmail</a>
-                        <a href="https://github.com/lucascaovilla" target="_blank">github</a>
-                        <a href="https://www.linkedin.com/in/lucasgcaovilla/" target="_blank">linkedin</a>
-                    </div>
-                </footer> 
-            -->
-        </main>   
-    </body>
-    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script defer src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        {% endif %}
+        
+    </main>   
+    <footer>
+        <div id="footer">
+            <h4>Contact, Portfolio and Social Media</h4>
+            <a id="gmail" href="mailto:https://lucasgrisac@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+            <a id="github" href="https://github.com/lucascaovilla" target="_blank"><i class="fa fa-github"></i></a>
+            <a id="linkedin" href="https://www.linkedin.com/in/lucasgcaovilla/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+        </div>
+    </footer> 
+</body>
+<script defer src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>
 
 

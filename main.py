@@ -11,10 +11,10 @@ app.secret_key = "blog"
 @app.route('/')
 def home():
     if request.args.get('projects') == 'projects':     
-        return render_template('index.html', projects = sel_all_projects())
+        return render_template('index.html', render_projects = True, projects = sel_all_projects())
     if request.args.get('about') == 'about':     
         return render_template('index.html', about = True)
-    return render_template('index.html', posts = sel_all_posts())
+    return render_template('index.html', render_posts = True, posts = sel_all_posts())
 
 @app.route("/create-account",methods=["POST","GET"])
 def create_account():
