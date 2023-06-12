@@ -98,11 +98,13 @@
         {% if render_posts%}
             <ul>
                 {% for post in posts %}
-                <li class="content post" id="post-{{post.id}}">
-                    <a href="/post?id={{post.id}}"></a>
-                    <p>{{post.title}}</p>
-                    <p>{{post.text}}</p>
-                </li>
+                    <li>
+                        <a class="content post" id="post-{{post.ident}}" href="/post?id={{post.id}}">
+                            <p>{{post.title}}</p>
+                            <p>By {{post.creator}}</p>
+                            <p>Created {{post.datetime}}</p> 
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -110,15 +112,16 @@
         {% if render_projects %}
             <ul>
                 {% for project in projects %}
-                <li class="content project" id="project-{{project.id}}">
-                    <a href="/project?id={{project.link}}"></a>
-                    <p>{{project.title}}</p>
-                    <p>{{project.description}}</p>
+                    <li>
+                        <a class="content project" id="project-{{project.iident}}" href="/project?id={{project.id}}">
+                            <p>{{project.title}}</p>
+                            <p>By {{project.creator}}</p>
+                            <p>Created {{project.datetime}}</p>
+                        </a>
                     </li>
-                    {% endfor %}
+                {% endfor %}
             </ul>
-        {% endif%}
-                
+        {% endif%}          
             
         {% if about %}
             <div id="main-div">  
@@ -173,7 +176,23 @@
                 </table>
             </div>
         {% endif %}
-        
+
+        {% if show_post %}
+            <div id="post">
+                <h1>{{post.title}}</h1>
+                <span>{{post.creator}}</span>
+                <span>{{post.datetime}}</span>
+                <p>{{post.text}}</p>
+            </div class="content">
+        {% endif %}
+
+        {% if show_project %}
+            <div id="project">
+                <h1>{{project.title}}</h1>
+                <span>{{project.description}}</span>
+                <span>{{project.link}}</span>
+            </div>
+        {% endif %}
     </main>   
     <footer>
         <div id="footer">

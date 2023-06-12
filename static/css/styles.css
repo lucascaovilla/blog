@@ -91,12 +91,22 @@ footer {
 }
 
 #footer{align-items: center; width: 450px; margin:auto; margin-top: 0; margin-bottom: 0;}
-#footer h4 { width: 100%; text-align: center; color: #000; font-size: 25px; font-family: "Jost"; font-weight: bold; margin-top: 30px;}
+#footer h4 {width: 100%; text-align: center; color: #000; font-size: 25px; font-family: "Jost"; font-weight: bold; margin-top: 30px;}
 #footer a {margin-top: 40px; align-content: center; width: 145px; font-size: 25px; color: #000; display: inline-block; padding-left: 60px;}
 
-.content {width: 100%; margin-block-end: 15px; background: #2B4D11; border: 10px solid #083C00; height: 100%}
-.post {height: 100px; display: block}
-.project {height: 300px}
+.content {width: 100%; margin-block-end: 15px; background: #2B4D11; border: 10px solid #083C00; height: 100%; color: #000; text-decoration: none;}
+.post {height: 100px; display: block;}
+.project {height: 300px; display: block;}
+
+#post, #project {
+  width: 100%;
+  margin:15px;
+  margin-top: 215px;
+  height: 100%;
+  color: #000;
+  text-decoration: none;
+}
+
 
 img {width: 200px; border-radius: 100px; float:left}
 #main-div p{padding-left: 215px; font-family: 'Jost'; font-size: 20px;}

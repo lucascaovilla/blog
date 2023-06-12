@@ -1,8 +1,10 @@
-from databases.blog_database import sel_all_posts, sel_all_projects, insert_post, insert_project
+from databases.blog_database import sel_all_posts, sel_all_projects, insert_post, select_post, select_project
 from databases.users_database import handle_user, insert_user
    
 from flask import Flask, render_template, request, redirect, jsonify, session
 import hashlib
+from datetime import datetime
+import uuid
 
 
 app = Flask("blog")
@@ -15,6 +17,18 @@ def home():
     if request.args.get('about') == 'about':     
         return render_template('index.html', about = True)
     return render_template('index.html', render_posts = True, posts = sel_all_posts())
+
+@app.route('/post')
+def post():
+    post_id = request.args.get('id')
+    post = select_post(post_id)
+    return render_template('index.html', show_post = True, post = post)
+
+@app.route('/project')
+def project():
+    project_id = request.args.get('id')
+    project = select_project(project_id)
+    return render_template('index.html', show_project = True, project = project)
 
 @app.route("/create-account",methods=["POST","GET"])
 def create_account():
@@ -51,11 +65,12 @@ def logout():
 @app.route("/create-post",methods=["POST","GET"])
 def create_post():
     if request.method == 'POST':
-        username = session['username']
+        creator = session['username']
+        dt= datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        id = str(uuid.uuid4())
         title = request.form['title']
         text = request.form['text']
-        if insert_post([title, text, username]):
-            session['logged_in'] = True
+        if insert_post((creator, dt, id, title, text)):
             msg = 'Posted successfully!'
         else:
             msg = 'No-data'
