@@ -9,8 +9,7 @@ html {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  /* Remove or set min-height to 0 */
-  min-height: 0;
+  font-family: "Jost";
   max-height: 100%;
 }
 
@@ -99,14 +98,38 @@ footer {
 .project {height: 300px; display: block;}
 
 #post, #project {
+  padding :15px;
   width: 100%;
-  margin:15px;
   margin-top: 215px;
   height: 100%;
   color: #000;
   text-decoration: none;
+  align-items: center;
 }
 
+.show-content h1 {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Jost";
+  text-align: center;
+  margin-bottom: 20px;
+  display: block;
+}
+.show-content span {
+  color: #505050;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.show-content p {
+  font-size: 20px;
+  line-height: 25px;
+  width: 80%;
+  margin:auto;
+  margin-top: 40px;
+}
 
 img {width: 200px; border-radius: 100px; float:left}
 #main-div p{padding-left: 215px; font-family: 'Jost'; font-size: 20px;}

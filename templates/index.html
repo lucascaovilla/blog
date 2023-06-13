@@ -178,18 +178,18 @@
         {% endif %}
 
         {% if show_post %}
-            <div id="post">
+            <div id="post" class="show-content">
                 <h1>{{post.title}}</h1>
                 <span>{{post.creator}}</span>
                 <span>{{post.datetime}}</span>
                 <p>{{post.text}}</p>
-            </div class="content">
+            </div>
         {% endif %}
 
         {% if show_project %}
-            <div id="project">
+            <div id="project" class="show-content">
                 <h1>{{project.title}}</h1>
-                <span>{{project.description}}</span>
+                <p>{{project.description}}</p>
                 <span>{{project.link}}</span>
             </div>
         {% endif %}
