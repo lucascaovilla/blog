@@ -7,7 +7,7 @@ from datetime import datetime
 import uuid
 
 
-app = Flask("blog")
+app = Flask(__name__)
 app.secret_key = "blog"
 
 @app.route('/')
@@ -75,5 +75,7 @@ def create_post():
         else:
             msg = 'No-data'
         return jsonify(msg)
-    
-app.run(host='0.0.0.0')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
