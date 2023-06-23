@@ -2,7 +2,7 @@ import sqlite3
 from sqlite3 import Error
 
 
-conn = sqlite3.connect('databases/data/blog.db', check_same_thread=False)
+conn = sqlite3.connect('api/databases/data/blog.db', check_same_thread=False)
 cur = conn.cursor()
 
 
@@ -30,6 +30,11 @@ def insert_post(post):
 
 def select_post(post_id):
     post_data = cur.execute("SELECT * FROM posts WHERE id = (?)", (post_id,)).fetchall()[0]
+    print("\n")
+    print(post_data)
+    print("\n")
+    print(cur.execute("SELECT * FROM posts WHERE id = (?)", (post_id,)).fetchall())
+    print("\n")
     post = {'ident': post_data[0], 'creator': post_data[1], 'datetime': post_data[2], 'id': post_data[3], 'title': post_data[4], 'text': post_data[5]}
     return post
 

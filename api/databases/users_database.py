@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('databases/data/usersdata.db', check_same_thread=False)
+conn = sqlite3.connect('api/databases/data/usersdata.db', check_same_thread=False)
 cur = conn.cursor()
 
 cur.execute("""CREATE TABLE IF NOT EXISTS userdata 
